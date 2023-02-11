@@ -1,0 +1,36 @@
+.navbar-nav{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.nav-logo-container,
+.nav-links-container,
+.nav-search-cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-container {
+  flex: 1;
+}
+
+.nav-links-container {
+  flex: 2;
+  justify-content: space-evenly;
+}
+
+.nav-search-cart-container{
+  flex: 1;
+  justify-content: space-around;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.nav-active {
+  color: red;
+  text-decoration: underline;
+}
