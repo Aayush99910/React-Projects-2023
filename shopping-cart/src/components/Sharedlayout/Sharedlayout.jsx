@@ -5,7 +5,6 @@ export default function SharedLayout() {
   return (
     <>
       <Navbar />
-      <h1>SharedLayout</h1>
       <Outlet />
     </>
   )
