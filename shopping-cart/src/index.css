@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
+:root {
+  --btn-color: rgb(31, 93, 208);
+  --text-color: white;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
