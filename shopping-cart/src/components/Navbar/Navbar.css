@@ -1,4 +1,4 @@
-.navbar-nav{
+.navbar-nav {
   display: flex;
   justify-content: space-between;
   height: 60px;
@@ -16,21 +16,27 @@
   flex: 1;
 }
 
+.nav-logo-container h2 {
+  margin-right: 20px;
+  font-size: 30px;
+}
+
 .nav-links-container {
   flex: 2;
   justify-content: space-evenly;
 }
 
-.nav-search-cart-container{
+.nav-search-cart-container {
   flex: 1;
   justify-content: space-around;
 }
 
 .link {
   text-decoration: none;
+  color: black;
 }
 
 .nav-active {
-  color: red;
-  text-decoration: underline;
+  color: rgb(60, 68, 225);
+  text-decoration: none;
 }
