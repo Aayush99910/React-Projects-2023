@@ -6,10 +6,12 @@ import './Home.css';
 
 export default function Home() {
   return (
-    <div className="home-big-container">
-      <HomeHeader />
-      <HomeMain />
+    <>
+      <div className="home-big-container">
+        <HomeHeader />
+        <HomeMain />
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
