@@ -1,0 +1,123 @@
+.about-big-container {
+  min-height: 100vh;
+}
+
+.about-heading-container {
+  width: 100%;
+  display: flex;
+  padding: 10px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-heading-welcome-text-container p {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.about-heading-welcome-text-container p {
+  width: 600px;
+}
+
+.about-heading-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.explore-button,
+.service-button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: var(--btn-color);
+  border-radius: 30px;
+  border: 1px solid var(--text-color);
+  transition: 0.30s;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.explore-button:hover,
+.service-button:hover {
+  background-color: white;
+  color: var(--btn-color);
+  border: 1px solid  var(--btn-color); 
+}
+
+.service-button {
+  color: var(--btn-color);
+  background-color: var(--text-color);
+}
+
+.service-button:hover {
+  background-color: var(--btn-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.about-main-container {
+  padding: 30px;
+}
+
+.about-staff-text-container {
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.about-heading,
+.about-heading {
+  text-align: center;
+}
+
+.services,
+.staff {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.about-services-heading {
+  margin-top: 40px;
+}
+
+.about-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+}
+
+.about-card {
+  width: 350px;
+  background-color: var(--btn-color);
+  padding: 20px;
+  color: var(--text-color);
+  border-radius: 15px;
+}
+
+.card-heading {
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+.about-staff-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-staff-image-container {
+  height: 500px;
+}
+
+.about-staff-image-container img {
+  height: 100%; 
+}
+
+.thankyou {
+  margin-top: 20px;
+}
