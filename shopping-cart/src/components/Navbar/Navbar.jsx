@@ -6,6 +6,7 @@ export default function Navbar() {
   return (
     <nav className="navbar-nav">
       <div className="nav-logo-container">
+        <h2>Fake Store</h2>
         <img src={Logo} />
       </div>
       <div className="nav-links-container">
