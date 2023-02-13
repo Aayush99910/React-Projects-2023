@@ -11,7 +11,7 @@ export default function AboutMain() {
           {
             aboutDatas.map(aboutData => {
               return (
-                <AboutCard data={aboutData} />
+                <AboutCard key={aboutData.id} data={aboutData} />
               )
             })
           }
