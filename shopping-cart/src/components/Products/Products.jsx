@@ -1,5 +1,7 @@
 export default function Products() {
   return (
-    <div>Products</div>
+    <div className="product-big-container">
+      PRODUCTS
+    </div>
   )
 }
