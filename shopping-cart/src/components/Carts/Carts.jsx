@@ -1,5 +1,5 @@
 import Card from "./Cart-card.jsx";
-import { products } from "../../assets/data";
+import { phoneProducts } from "../Home/data.js";
 import "../Sharedlayout/Sharedlayout.css"
 
 export default function Carts(props) {
@@ -7,13 +7,13 @@ export default function Carts(props) {
   let i = 0;
   const cartOnlyProducts = [];
   while (j < props.cartItems.length) {
-    if (i >= products.length) {
+    if (i >= phoneProducts.length) {
       i = 0;
       j++;
     } 
 
-    if (products[i].id == props.cartItems[j]) {
-      cartOnlyProducts.push(products[i]);
+    if (phoneProducts[i].id == props.cartItems[j]) {
+      cartOnlyProducts.push(phoneProducts[i]);
     }
 
     i++;
