@@ -1,5 +1,7 @@
 import { phoneProducts }  from "./data";
 import { airpodProducts } from "./data";
+import { laptopProducts } from "./data";
+import { cameraProducts } from "./data";
 import { bestSeller } from "./data";
 import Card from "./Home-card";
 import { NavLink } from "react-router-dom";
@@ -7,6 +9,8 @@ import { NavLink } from "react-router-dom";
 export default function HomeMain (props) {
   let newPhoneProducts = phoneProducts.slice(0, 4);
   let newAirpodProducts = airpodProducts.slice(0, 4);
+  let newLaptopProducts = laptopProducts.slice(0, 4);
+  let newCameraProducts = cameraProducts.slice(0, 4);
 
   return (
     <main className="home-main-container">
@@ -30,6 +34,32 @@ export default function HomeMain (props) {
       <section className="items-container">
         {
           newAirpodProducts.map(product => {
+            return (
+              <Card key={product.id} data={product} addItems={props.addItems}/>
+            )
+          })
+        }
+      </section>
+      <div className="home-for-you">
+        <h2>Laptops For You!</h2>
+        <NavLink to="/products">See All</NavLink>
+      </div>
+      <section className="items-container">
+        {
+          newLaptopProducts.map(product => {
+            return (
+              <Card key={product.id} data={product} addItems={props.addItems}/>
+            )
+          })
+        }
+      </section>
+      <div className="home-for-you">
+        <h2>Cameras For You!</h2>
+        <NavLink to="/products">See All</NavLink>
+      </div>
+      <section className="items-container">
+        {
+          newCameraProducts.map(product => {
             return (
               <Card key={product.id} data={product} addItems={props.addItems}/>
             )
