@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CoverImg from "../../assets/iphone.png";
 
 export default function HomeHeader() {
