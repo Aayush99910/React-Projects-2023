@@ -13,7 +13,6 @@ export default function Navbar() {
         <NavLink to="/" className={({isActive}) => isActive ? 'nav-active' : 'link'}>Home</NavLink>
         <NavLink to="/about" className={({isActive}) => isActive ? 'nav-active' : 'link'}>About</NavLink>
         <NavLink to="/products" className={({isActive}) => isActive ? 'nav-active' : 'link'}>Products</NavLink>
-        <NavLink to="/offers" className={({isActive}) => isActive ? 'nav-active' : 'link'}>Offers</NavLink>
       </div>
       <div className="nav-search-cart-container">
         <input />
