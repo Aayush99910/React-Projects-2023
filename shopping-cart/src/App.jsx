@@ -10,7 +10,7 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function addItems(e) {
-    const id = Number(e.target.parentElement.parentElement.id);
+    const id = e.target.parentElement.parentElement.id;
     setCartItems(prevState => {
       return [...prevState, id]
     });
