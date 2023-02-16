@@ -2,9 +2,6 @@ import { phoneProducts }  from "./data";
 import { airpodProducts } from "./data";
 import { laptopProducts } from "./data";
 import { cameraProducts } from "./data";
-import { bestSeller } from "./data";
-import { NavLink } from "react-router-dom";
-import Card from "./Home-card";
 import HomeForYouCard from "./Home-for-you-card";
 
 export default function HomeMain (props) {
