@@ -5,10 +5,10 @@ import Logo from "../../assets/react.svg"
 export default function Navbar() {
   return (
     <nav className="navbar-nav">
-      <div className="nav-logo-container">
+      <NavLink to="/" className="nav-logo-container link">
         <h2>Fake Store</h2>
         <img src={Logo} />
-      </div>
+      </NavLink>
       <div className="nav-links-container">
         <NavLink to="/" className={({isActive}) => isActive ? 'nav-active' : 'link'}>Home</NavLink>
         <NavLink to="/about" className={({isActive}) => isActive ? 'nav-active' : 'link'}>About</NavLink>
