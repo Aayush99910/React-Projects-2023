@@ -3,8 +3,9 @@ import { airpodProducts } from "./data";
 import { laptopProducts } from "./data";
 import { cameraProducts } from "./data";
 import { bestSeller } from "./data";
-import Card from "./Home-card";
 import { NavLink } from "react-router-dom";
+import Card from "./Home-card";
+import HomeForYouCard from "./Home-for-you-card";
 
 export default function HomeMain (props) {
   let newPhoneProducts = phoneProducts.slice(0, 4);
@@ -12,73 +13,36 @@ export default function HomeMain (props) {
   let newLaptopProducts = laptopProducts.slice(0, 4);
   let newCameraProducts = cameraProducts.slice(0, 4);
 
+  const allProductsDataInArray = [
+    {
+      id: 0,
+      title: "Phones For You!",
+      array: [...newPhoneProducts]
+    },
+    {
+      id: 1,
+      title: "Airpods For You!",
+      array: [...newAirpodProducts]
+    },
+    {
+      id: 2,
+      title: "Laptop For You!",
+      array: [...newLaptopProducts]
+    },
+    {
+      id: 3,
+      title: "Cameras For You!",
+      array: [...newCameraProducts]
+    },
+  ]
+  
   return (
     <main className="home-main-container">
-      <div className="home-for-you">
-        <h2>Phones For You!</h2>
-        <NavLink to="/products">See All</NavLink>
-      </div>
-      <section className="items-container">
-        {
-          newPhoneProducts.map(product => {
-            return (
-              <Card key={product.id} data={product} addItems={props.addItems}/>
-            )
-          })
-        }
-      </section>
-      <div className="home-for-you">
-        <h2>Airpods For You!</h2>
-        <NavLink to="/products">See All</NavLink>
-      </div>
-      <section className="items-container">
-        {
-          newAirpodProducts.map(product => {
-            return (
-              <Card key={product.id} data={product} addItems={props.addItems}/>
-            )
-          })
-        }
-      </section>
-      <div className="home-for-you">
-        <h2>Laptops For You!</h2>
-        <NavLink to="/products">See All</NavLink>
-      </div>
-      <section className="items-container">
-        {
-          newLaptopProducts.map(product => {
-            return (
-              <Card key={product.id} data={product} addItems={props.addItems}/>
-            )
-          })
-        }
-      </section>
-      <div className="home-for-you">
-        <h2>Cameras For You!</h2>
-        <NavLink to="/products">See All</NavLink>
-      </div>
-      <section className="items-container">
-        {
-          newCameraProducts.map(product => {
-            return (
-              <Card key={product.id} data={product} addItems={props.addItems}/>
-            )
-          })
-        }
-      </section>
-      <div className="home-for-you">
-        <h2>Best Seller</h2>
-        <NavLink to="/products">See All</NavLink>
-      </div>
-      <section className="items-container">
-        {
-          bestSeller.map(product => {
-            return (
-              <Card key={product.id} data={product} />
-            )
-          })
-        }
-      </section>
+      {
+        allProductsDataInArray.map(product => {
+          return <HomeForYouCard key={product.id} data={product} addItems={props.addItems}/>  
+        })
+      }
     </main>
   )
 }
