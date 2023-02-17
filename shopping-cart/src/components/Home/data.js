@@ -222,6 +222,13 @@ export const cameraProducts = [
     name: "Nikon 4.0",
     price: "$199.00",
     description: "NIKON 7000"
+  },
+  {
+    id: nanoid(),
+    imageURL: "https://www.pngmart.com/files/15/Professional-Film-Camera-Video-Transparent-PNG-354x279.png",
+    name: "Professional camera",
+    price: "$3999.00",
+    description: "Professional camera from nikon. Superb."
   }
 ]
 
