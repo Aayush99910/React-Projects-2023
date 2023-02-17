@@ -2,7 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./components/Sharedlayout/Sharedlayout";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import SharedProductsLayout from "./components/SharedProductsLayout/SharedProductsLayout";
 import Products from "./components/Products/Products";
+import PhoneProduct from "./components/Products/phoneProduct";
+import CameraProduct from "./components/Products/cameraProduct";
+import LaptopProduct from "./components/Products/laptopProduct";
+import AirpodProduct from "./components/Products/airpodProduct";
 import Carts from "./components/Carts/Carts";
 import { useState } from "react";
 
@@ -23,8 +28,14 @@ export default function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home addItems={addItems} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/carts" element={<Carts cartItems={cartItems} />} />
+          </Route>
+          <Route path="/products" element={<SharedProductsLayout />}>
+            <Route index element={<Products />} />
+            <Route path="/products/phone" element={<PhoneProduct />} />
+            <Route path="/products/camera" element={<CameraProduct />} />
+            <Route path="/products/laptop" element={<LaptopProduct />} />
+            <Route path="/products/airpods" element={<AirpodProduct />} />
           </Route>
         </Routes>
       </BrowserRouter>
