@@ -31,11 +31,11 @@ export default function App() {
             <Route path="/carts" element={<Carts cartItems={cartItems} />} />
           </Route>
           <Route path="/products" element={<SharedProductsLayout />}>
-            <Route index element={<Products />} />
-            <Route path="/products/phone" element={<PhoneProduct />} />
-            <Route path="/products/camera" element={<CameraProduct />} />
-            <Route path="/products/laptop" element={<LaptopProduct />} />
-            <Route path="/products/airpods" element={<AirpodProduct />} />
+            <Route index element={<Products addItems={addItems} />} />
+            <Route path="/products/phone" element={<PhoneProduct addItems={addItems}  />} />
+            <Route path="/products/camera" element={<CameraProduct addItems={addItems}  />} />
+            <Route path="/products/laptop" element={<LaptopProduct addItems={addItems}  />} />
+            <Route path="/products/airpods" element={<AirpodProduct addItems={addItems}  />} />
           </Route>
         </Routes>
       </BrowserRouter>
