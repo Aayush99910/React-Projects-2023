@@ -14,21 +14,25 @@ export default function HomeMain (props) {
     {
       id: 0,
       title: "Phones For You!",
+      path: "/products/phone",
       array: [...newPhoneProducts]
     },
     {
       id: 1,
       title: "Airpods For You!",
+      path: "/products/airpods",
       array: [...newAirpodProducts]
     },
     {
       id: 2,
       title: "Laptop For You!",
+      path: "/products/laptop",
       array: [...newLaptopProducts]
     },
     {
       id: 3,
       title: "Cameras For You!",
+      path: "/products/camera",
       array: [...newCameraProducts]
     },
   ]
