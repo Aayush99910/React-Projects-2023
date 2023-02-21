@@ -2,17 +2,19 @@ import "../Sharedlayout/Sharedlayout.css"
 
 export default function Card(props) {
   return (
-    <article className="item-container">
-      <div className="item-image-container">
-        <img src={props.data.imageURL} />
-      </div>
-      <div className="item-details-container">
-        <div>
-          <h3 className="title">{props.data.name}</h3>
-          <p className="price">{props.data.price}</p>
+    <article className="cart-item-container" id={props.data.id}>
+      <div className="cart-item-image-details-container">
+        <div className="cart-item-image-container">
+          <img src={props.data.imageURL} />
         </div>
-        <p className="description">{props.data.description}</p>
-        <button className="add-to-cart-button" >Remove from Cart</button>
+        <div className="cart-item-details-container">
+          <h3>{props.data.name}</h3>
+          <p>{props.data.description}</p>
+          <button className="remove-button" onClick={props.removeItems}>Remove from Cart</button>
+          </div>
+      </div>
+      <div className="cart-item-price">
+        <p>{props.data.price}</p>
       </div>
     </article>
   )
