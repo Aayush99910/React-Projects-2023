@@ -67,3 +67,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.home-for-you a {
+  text-decoration: none;
+  color: black;
+}
+
+.home-for-you a:hover {
+  color: red;
+}
