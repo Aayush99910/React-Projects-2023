@@ -31,7 +31,9 @@
 }
 
 .home-buy-button,
-.add-to-cart-button {
+.add-to-cart-button,
+.remove-button,
+.checkout-button {
   padding: 10px 20px;
   border: none;
   color: var(--text-color);
@@ -43,10 +45,18 @@
 }
 
 .home-buy-button:hover,
-.add-to-cart-button:hover {
+.add-to-cart-button:hover,
+.remove-button:hover,
+.checkout-button:hover {
   background-color: var(--text-color);
   color: var(--btn-color);
   border: 1px solid var(--btn-color); 
+}
+
+.remove-button,
+.checkout-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .home-main-container {
