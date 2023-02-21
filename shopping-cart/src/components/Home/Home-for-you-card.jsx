@@ -6,7 +6,7 @@ const HomeForYouCard = (props) => {
     <div>
 			<div className="home-for-you">
 				<h2>{props.data.title}</h2>
-				<NavLink to="/products">See all</NavLink>
+				<NavLink to={props.data.path}>See all</NavLink>
 			</div>
 			<section className="items-container">
 				{
