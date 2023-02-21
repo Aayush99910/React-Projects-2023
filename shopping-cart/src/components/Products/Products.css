@@ -11,10 +11,11 @@
 }
 
 .products-category-card {
-  height: 250px;
-  width: 270px;
+  height: 60px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  text-decoration: none;
 }
