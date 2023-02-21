@@ -3,22 +3,27 @@ import CategoryCard from "./Products-CategoryCard";
 const ProductHeader = () => {
 	const productsItems = [
 		{
+			id: 0,
 			title: "phone",
 			bgColor: "#FF3131"
 		},
 		{
+			id: 1,
 			title: "camera",
 			bgColor: "blue"
 		},
 		{
+			id: 2,
 			title: "laptop",
 			bgColor: "Green"
 		},
 		{
+			id: 3,
 			title: "airpods",
 			bgColor: "black"
 		}
 	]
+	
 	return (
 		<header className="product-header-container">
 			<div className="product-header-title">
@@ -28,7 +33,7 @@ const ProductHeader = () => {
 				{
 					productsItems.map(productsItems => {
 						return (
-							<CategoryCard data={productsItems}/>
+							<CategoryCard key={productsItems.id} data={productsItems}/>
 						)
 					})
 				}
