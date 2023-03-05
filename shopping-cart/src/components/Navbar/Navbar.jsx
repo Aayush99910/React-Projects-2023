@@ -16,7 +16,6 @@ export default function Navbar() {
         <NavLink to="/about" className={({isActive}) => isActive ? 'nav-active' : 'link'}>About</NavLink>
       </div>
       <div className="nav-search-cart-container">
-        <input />
         <NavLink className="nav-logo-container" to="/carts">
           <img style={{height: '25px'}} src={cartLogo} />
         </NavLink>
