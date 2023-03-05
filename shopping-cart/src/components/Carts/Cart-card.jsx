@@ -13,8 +13,15 @@ export default function Card(props) {
           <button className="remove-button" onClick={props.removeItems}>Remove from Cart</button>
           </div>
       </div>
-      <div className="cart-item-price">
-        <p>{props.data.price}</p>
+      <div>
+        <div className="cart-item-price">
+          <p>{props.data.price}</p>
+        </div>
+        <div className="counter-container"> 
+              <button onClick={props.increaseOrDecreaseItem} className="decrease">-</button>
+              <p>{props.data.count}</p>
+              <button onClick={props.increaseOrDecreaseItem} className="increase">+</button>
+        </div>
       </div>
     </article>
   )
