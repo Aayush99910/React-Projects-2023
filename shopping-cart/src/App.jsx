@@ -14,26 +14,81 @@ import { useState } from "react";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
-  let [total, setTotal] = useState(0);
+  let total = 0;
 
   function addItems(e) {
     const id = e.target.parentElement.parentElement.id;
     setCartItems(prevState => {
-      return [...prevState, id]
+      if (prevState.length > 0) {
+        for (let i = 0; i < prevState.length; i++) {
+          if (prevState[i].id == id) {
+              let newPrevState = prevState.filter(function (item) {
+                if (item.id == id) {
+                  return false
+                } else {
+                  return true
+                }
+              })
+              return [...newPrevState, {id : id, count: prevState[i].count + 1}];
+          }
+        }
+
+        return [...prevState, {id: id, count: 1}];
+
+      } else {
+        return [...prevState, {id: id, count: 1}];
+      }
     });
   }
+
 
   function removeItems(e) {
     const id = e.target.parentElement.parentElement.parentElement.id;
     setCartItems(prevState => {
-      return prevState.map(Id => {
-        if (Id == id) {
-          // pass
+      return prevState.filter(item => {
+        if (item.id == id) {
+          return false;
         } else {
-          return Id;
+          return true;
         }
       })
     })
+  }
+
+  function increaseOrDecreaseItem(e) {
+    const increaseOrdecrease = e.target.className;
+    const id = e.target.parentElement.parentElement.parentElement.id;
+    if (increaseOrdecrease == "increase") {
+      setCartItems(prevState => {
+        for (let i = 0; i < prevState.length; i++) {
+          if (prevState[i].id == id) {
+            let newPrevState = prevState.filter(item => {
+              if (item.id == id) {
+                return false;
+              } else {
+                return true;
+              }
+            })
+            return [...newPrevState, {id: id, count: prevState[i].count + 1}]
+          } 
+        }
+      })
+    } else if (increaseOrdecrease == "decrease"){
+      setCartItems(prevState => {
+        for (let i = 0; i < prevState.length; i++) {
+          if (prevState[i].id == id) {
+            let newPrevState = prevState.filter(item => {
+              if (item.id == id) {
+                return false;
+              } else {
+                return true;
+              }
+            })
+            return [...newPrevState, {id: id, count: prevState[i].count - 1}]
+          } 
+        }
+      }) 
+    }
   }
 
   function calculateTotal() {
@@ -41,20 +96,27 @@ export default function App() {
     let i = 0;
     const cartOnlyProducts = [];
     while (j < cartItems.length) {
-      if (i >= allProducts.length) {
+      if (i == allProducts.length) {
         i = 0;
         j++;
       } 
   
-      if (allProducts[i].id == cartItems[j]) {
-        cartOnlyProducts.push(allProducts[i]);
+      if (allProducts[i].id == cartItems[j].id) {
+        let allProductAndCartItemsInOneObject = {
+          ...allProducts[i],
+          count: cartItems[j].count
+        }
+        cartOnlyProducts.push(allProductAndCartItemsInOneObject);
+        i = 0;
+        j++;
+      } else {
+        i++;
       }
-  
-      i++;
     }
 
     cartOnlyProducts.forEach(item => {
-      total = total + Number(item.price.slice(1))
+      let itemTotal = item.count * Number(item.price.slice(1));
+      total = total + Number(itemTotal)
     })
   }
 
@@ -67,7 +129,7 @@ export default function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home addItems={addItems} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/carts" element={<Carts cartItems={cartItems} removeItems={removeItems} total={total}/>} />
+            <Route path="/carts" element={<Carts cartItems={cartItems} removeItems={removeItems} total={total} increaseOrDecreaseItem={increaseOrDecreaseItem}/>} />
           </Route>
           <Route path="/products" element={<SharedProductsLayout />}>
             <Route index element={<Products addItems={addItems} />} />
