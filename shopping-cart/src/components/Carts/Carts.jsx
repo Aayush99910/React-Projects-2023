@@ -1,24 +1,33 @@
 import Card from "./Cart-card.jsx";
-import { allProducts } from "../Home/data.js";
+import { allProducts, phoneProducts } from "../Home/data.js";
 import "../Sharedlayout/Sharedlayout.css";
 import "./Carts.css";
 import cart from '../../assets/shoppingCart.png'
 
 export default function Carts(props) {
+  let cartItems = props.cartItems;
+  const cartOnlyProducts = [];
+
   let j = 0;
   let i = 0;
-  const cartOnlyProducts = [];
-  while (j < props.cartItems.length) {
-    if (i >= allProducts.length) {
+
+  while (j < cartItems.length) {
+    if (i == allProducts.length) {
       i = 0;
       j++;
     } 
 
-    if (allProducts[i].id == props.cartItems[j]) {
-      cartOnlyProducts.push(allProducts[i]);
+    if (allProducts[i].id == cartItems[j].id) {
+      let allProductAndCartItemsInOneObject = {
+        ...allProducts[i],
+        count: cartItems[j].count
+      }
+      cartOnlyProducts.push(allProductAndCartItemsInOneObject);
+      i = 0;
+      j++;
+    } else {
+      i++;
     }
-
-    i++;
   }
 
   return (
@@ -38,7 +47,7 @@ export default function Carts(props) {
               {
                 cartOnlyProducts.map(product => {
                   return (
-                    <Card key={product.id} data={product}  removeItems={props.removeItems}/>
+                    <Card key={product.id} data={product} removeItems={props.removeItems} increaseOrDecreaseItem={props.increaseOrDecreaseItem}/>
                   )
                 })
               }
