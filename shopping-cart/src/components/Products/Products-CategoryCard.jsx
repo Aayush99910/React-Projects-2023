@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 const CategoryCard = (props) => {
-  const backgroundColor = props.data.bgColor;
   return (
-    <NavLink to={`/products/${props.data.title}`} className="products-category-card" style={{backgroundColor: backgroundColor, color: "white"}}>
-      {props.data.title}
+    <NavLink to={`/products/${props.data.title}`} className="products-category-card">
+      <img src={props.data.image} />
+      <p>{props.data.title}</p>
     </NavLink>
   )
 }
