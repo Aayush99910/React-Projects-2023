@@ -53,8 +53,8 @@ export default function Carts(props) {
               }
             </div>
             <div className="right-container">
+              <p>Your total is:<b> ${props.total}</b></p>
               <button className="checkout-button">Continue to Checkout</button>
-              <p>Total: ${props.total}</p>
             </div>
           </section> 
         </div>
