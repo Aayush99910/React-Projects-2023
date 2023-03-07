@@ -1,10 +1,9 @@
 /* for mobile  */
 @media (max-width: 528px) {
   .items-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 30px;
+    row-gap: 20px;
   }
 
   .item-container {
@@ -19,14 +18,10 @@
   .item-image-container {
     height: 60%;
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
   .title {
-    font-size: 15px;
-    color: black;
-    font-weight: bold;
+    font-size: 14px;
     margin-bottom: 2px;
   }
   
@@ -35,7 +30,6 @@
   }
   
   .description {
-    color: rgb(79, 79, 79);
     font-size: 12px;
   }
   
@@ -47,8 +41,6 @@
 /* for tablets */
 @media (min-width: 529px) and (max-width: 770px){
   .items-container {
-    display: flex;
-    flex-wrap: wrap;
     row-gap: 20px;
     justify-content: space-around;
     margin-bottom: 30px;
@@ -64,35 +56,29 @@
   .item-image-container {
     height: 150px;
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
   .title {
-    color: black;
-    font-weight: bold;
+    font-size: 15px;
     margin-bottom: 2px;
   }
   
   .price {
-    font-size: 15px;
+    font-size: 12px;
   }
   
   .description {
-    color: rgb(79, 79, 79);
-    font-size: 15px;
+    font-size: 13px;
   }
   
   .add-to-cart-button { 
-    margin-top: 20px;
+    margin-top: 12px;
   }
 }
 
 /* for desktop  */
 @media (min-width: 771px) {
   .items-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 30px;
   }
@@ -108,13 +94,10 @@
   .item-image-container {
     height: 60%;
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
   .title {
-    color: black;
-    font-weight: bold;
+    font-size: 16px;
     margin-bottom: 2px;
   }
   
@@ -123,13 +106,31 @@
   }
   
   .description {
-    color: rgb(79, 79, 79);
     font-size: 15px;
   }
   
   .add-to-cart-button { 
-    margin-top: 20px;
+    margin-top: 15px;
   }
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+}
+
+.description {
+  color: rgb(79, 79, 79);
 }
 
 .item-image-container img {
