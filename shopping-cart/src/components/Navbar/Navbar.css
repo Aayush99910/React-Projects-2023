@@ -1,7 +1,5 @@
 @media (max-width: 528px) {
   .navbar-nav {
-    display: flex;
-    justify-content: space-between;
     height: 110px;
     flex-direction: column;
     row-gap: 15px;
@@ -10,36 +8,40 @@
   .nav-logo-container h2 {
     margin-right: 5px;
     font-size: 16px;
-    white-space: nowrap;
   }
 }
 
-@media (min-width: 529px) and (max-width: 768px){
+@media (min-width: 529px) and (max-width: 770px){
   .navbar-nav {
-    display: flex;
-    justify-content: space-between;
     height: 60px;
+    row-gap: 15px;
   }
 
   .nav-logo-container h2 {
     margin-right: 15px;
     font-size: 20px;
-    white-space: nowrap;
   }
 }
 
-@media (min-width: 769px) and (max-width: 2000px) {
+@media (min-width: 771px) and (max-width: 2000px) {
   .navbar-nav {
-    display: flex;
-    justify-content: space-between;
     height: 60px;
+    row-gap: 15px;
   }
 
   .nav-logo-container h2 {
     margin-right: 15px;
     font-size: 25px;
-    white-space: nowrap;
   }
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo-container h2 {
+  white-space: nowrap;
 }
 
 .nav-links-container {
