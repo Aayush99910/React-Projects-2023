@@ -10,6 +10,7 @@ import CameraProduct from "./components/Products/cameraProduct";
 import LaptopProduct from "./components/Products/laptopProduct";
 import AirpodProduct from "./components/Products/airpodProduct";
 import Carts from "./components/Carts/Carts";
+import NotFound from "./components/NotFound/NotFound"
 import { useState } from "react";
 
 export default function App() {
@@ -138,6 +139,7 @@ export default function App() {
             <Route path="/products/laptop" element={<LaptopProduct addItems={addItems}  />} />
             <Route path="/products/airpods" element={<AirpodProduct addItems={addItems}  />} />
           </Route>
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
     </>
