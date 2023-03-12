@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { database } from "../firebaseConfig";
@@ -60,7 +61,7 @@ const Login = () => {
     .then((array) => {
       const isCorrectCredentials = verifyUserDetails(array);
       if (isCorrectCredentials) {
-        navigate('/');
+        navigate('/chatapp');
       }
     })
     .catch((error) => {
@@ -69,34 +70,37 @@ const Login = () => {
   }
   
   return (
-    <div className="form-big-container">
-      <div className="form-container">
-        <div className="title">
-          <h1>Welcome back!</h1>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={handleInput}
-            placeholder="Your Email" 
-            type="email" 
-            name="email" 
-            autoCorrect="off" 
-            autoComplete="off"
-            value={loginCredentials.email} 
-            required/>
-          <input
-            onChange={handleInput} 
-            placeholder="Password" 
-            type="password" 
-            name="password" 
-            autoCorrect="off" 
-            autoComplete="off" 
-            value={loginCredentials.password}
-            required/>  
-          <button className="button" type="submit">Log in</button>
-        </form>
-        <div className="link-container">
-          <p>Not a user? <Link to="/register">Sign up</Link></p>
+    <div>
+      <Navbar />
+      <div className="form-big-container">
+        <div className="form-container">
+          <div className="title">
+            <h1>Welcome back!</h1>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input
+              onChange={handleInput}
+              placeholder="Your Email" 
+              type="email" 
+              name="email" 
+              autoCorrect="off" 
+              autoComplete="off"
+              value={loginCredentials.email} 
+              required/>
+            <input
+              onChange={handleInput} 
+              placeholder="Password" 
+              type="password" 
+              name="password" 
+              autoCorrect="off" 
+              autoComplete="off" 
+              value={loginCredentials.password}
+              required/>  
+            <button className="button" type="submit">Log in</button>
+          </form>
+          <div className="link-container">
+            <p>Not a user? <Link to="/register">Sign up</Link></p>
+          </div>
         </div>
       </div>
     </div>
