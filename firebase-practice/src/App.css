@@ -1,0 +1,53 @@
+.form-big-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.form-container {
+  border-radius: 10px;
+  background-color: var(--form-color);
+  padding: 25px;
+  width: 500px;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.chatapp-text h3 {
+  margin-bottom: 5px;
+}
+
+.chatapp-text p {
+  margin-bottom: 10px;
+  color: gray;
+  font-size: 14px;
+}
+
+form > input {
+  display: block;
+  width: 90%;
+  height: 35px;
+  margin-bottom: 20px; 
+  padding: 5px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  background-color: var(--btn-color);
+  color: white;
+  border-radius: 4px;
+}
+
+.link-container {
+  margin-top: 20px;
+}
