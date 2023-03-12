@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
@@ -14,6 +16,7 @@ import { Link } from "react-router-dom";
 const Register = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+  const navigate = useNavigate();
 
   const collectionRef = collection(database, 'users'); // collectionRef 
 
@@ -72,69 +75,69 @@ const Register = () => {
     // creates user with email and password
     createUserWithEmailAndPassword(auth, formData.email, formData.password)
     .then(() => {
-      alert("Successfully registered. Please login to access the homepage.")
+      navigate("/login");
     })
     .catch(error => {
       alert(error.message)
     })
 
     addData(); // adds the user's data to the database
-
-    // setting the values back to empty string after the user has submitted the data
-    setFormData({ username: "", email: "", password: "", confirmpassword: "" })
   }
 
   return (
-    <div className="form-big-container">
-      <div className="form-container">
-        <div className="title">
-          <h1>Register</h1>
-        </div>
-        <div className="chatapp-text">
-          <h3>Chat app</h3>
-          <p>Join the chat app and have fun socializing with people</p>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <input 
-            onChange={handleInput}
-            placeholder="Your Username" 
-            type="text" 
-            name="username" 
-            autoCorrect="off" 
-            autoComplete="off"  
-            value={formData.username}
-            required/>
-          <input
-            onChange={handleInput} 
-            placeholder="Your Email" 
-            type="email" 
-            name="email" 
-            autoCorrect="off" 
-            autoComplete="off" 
-            value={formData.email}
-            required/>
-          <input 
-            onChange={handleInput}
-            placeholder="Password" 
-            type="password" 
-            name="password" 
-            autoCorrect="off" 
-            autoComplete="off" 
-            value={formData.password}
-            required/> 
-          <input 
-            onChange={handleInput}
-            placeholder="Confirm password" 
-            type="password" 
-            name="confirmpassword" 
-            autoCorrect="off" 
-            autoComplete="off" 
-            value={formData.confirmpassword}
-            required/> 
-          <button className="button" type="submit">Sign up</button>
-        </form>
-        <div className="link-container">
-          <p>Already a user? <Link to="/login">Log in</Link></p>
+    <div>
+      <Navbar />
+      <div className="form-big-container">
+        <div className="form-container">
+          <div className="title">
+            <h1>Register</h1>
+          </div>
+          <div className="chatapp-text">
+            <h3>Chat app</h3>
+            <p>Join the chat app and have fun socializing with people</p>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input 
+              onChange={handleInput}
+              placeholder="Your Username" 
+              type="text" 
+              name="username" 
+              autoCorrect="off" 
+              autoComplete="off"  
+              value={formData.username}
+              required/>
+            <input
+              onChange={handleInput} 
+              placeholder="Your Email" 
+              type="email" 
+              name="email" 
+              autoCorrect="off" 
+              autoComplete="off" 
+              value={formData.email}
+              required/>
+            <input 
+              onChange={handleInput}
+              placeholder="Password" 
+              type="password" 
+              name="password" 
+              autoCorrect="off" 
+              autoComplete="off" 
+              value={formData.password}
+              required/> 
+            <input 
+              onChange={handleInput}
+              placeholder="Confirm password" 
+              type="password" 
+              name="confirmpassword" 
+              autoCorrect="off" 
+              autoComplete="off" 
+              value={formData.confirmpassword}
+              required/> 
+            <button className="button" type="submit">Sign up</button>
+          </form>
+          <div className="link-container">
+            <p>Already a user? <Link to="/login">Log in</Link></p>
+          </div>
         </div>
       </div>
     </div>
