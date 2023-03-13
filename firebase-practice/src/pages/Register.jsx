@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   const auth = getAuth();
-  const user = auth.currentUser;
   const navigate = useNavigate();
 
   const collectionRef = collection(database, 'users'); // collectionRef 
@@ -25,7 +24,8 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
-    confirmpassword: ""
+    confirmpassword: "",
+    profilePicURL: "https://thumbs.dreamstime.com/z/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg"
   });
 
   // this function updates the formdata whenever the user changes their data
@@ -96,7 +96,7 @@ const Register = () => {
             <h3>Chat app</h3>
             <p>Join the chat app and have fun socializing with people</p>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="register-form" onSubmit={handleSubmit}>
             <input 
               onChange={handleInput}
               placeholder="Your Username" 
@@ -132,7 +132,16 @@ const Register = () => {
               autoCorrect="off" 
               autoComplete="off" 
               value={formData.confirmpassword}
-              required/> 
+              required/>
+              <input 
+              onChange={handleInput}
+              placeholder="https:/yourURLfortheImage" 
+              type="text" 
+              name="profilePicURL" 
+              autoCorrect="off" 
+              autoComplete="off" 
+              value={formData.profilePicURL}
+              /> 
             <button className="button" type="submit">Sign up</button>
           </form>
           <div className="link-container">
