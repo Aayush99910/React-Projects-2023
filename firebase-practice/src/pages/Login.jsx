@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { database } from "../firebaseConfig";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
 const Login = () => {
@@ -60,8 +61,15 @@ const Login = () => {
     getData(requestedQuery)
     .then((array) => {
       const isCorrectCredentials = verifyUserDetails(array);
+      const auth = getAuth();
       if (isCorrectCredentials) {
-        navigate('/chatapp');
+        signInWithEmailAndPassword(auth, loginCredentials.email, loginCredentials.password)
+        .then(() => {
+          navigate('/chatapp');
+        })
+        .catch((error) => {
+          alert(error.message)
+        })
       }
     })
     .catch((error) => {
@@ -77,7 +85,7 @@ const Login = () => {
           <div className="title">
             <h1>Welcome back!</h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="login-form" onSubmit={handleSubmit}>
             <input
               onChange={handleInput}
               placeholder="Your Email" 
